@@ -13,25 +13,17 @@ import { DetailPanelKeys } from "../../enums/DetailPanelKeys";
 import { FinanceDetailTextFieldKeys, PersonalDetailTextFieldKeys } from "../../enums/TextFieldKeys";
 import { useImmer } from "use-immer";
 import { Summary } from "../summary/Summary";
-import { fetchIncomeExpenditureRating } from "../../api/fetchIncomeExpenditureRating";
-import { IncomeExpenditureRequestBody } from "../../api/dto/IncomeExpenditureRequestBody";
 
 const inputProps = {style: {backgroundColor: "white", borderRadius: "0.5rem"}};
 
 export const ProgressiveForm: React.FC = () => {
     const location = useLocation();
-    const navigate = useNavigate()
+    const navigate = useNavigate();
     const [expanded, setExpanded] = React.useState(DetailPanelKeys.PERSONAL)
     const [newState, setNewState] = useImmer(location.state as PersonalDetailState);
 
     const onProcessClickHandler = async () => {
-        const requestBody: IncomeExpenditureRequestBody = {
-            income: newState.income,
-            expenditure: newState.expenditure,
-            debtPayments: newState.debtPayments
-        }
-        
-        const response = await fetchIncomeExpenditureRating(requestBody);
+         navigate("/results", {state: newState});
     }
 
     const onBackButtonHandler = () => {
@@ -40,12 +32,12 @@ export const ProgressiveForm: React.FC = () => {
     }
     
     const onPersonalNextClickHandler = () => {
-        navigate(".", {state: newState})
+        navigate(".", {state: newState});
         setExpanded(DetailPanelKeys.FINANCIAL);
     }
 
     const onFinancesNextClickHandler = () => {
-        navigate(".", {state: newState})
+        navigate(".", {state: newState});
         setExpanded(DetailPanelKeys.SUMMARY);
     }
 

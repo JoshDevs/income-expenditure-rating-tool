@@ -1,3 +1,3 @@
 import { PersonalDetailState } from "../../interfaces/PersonalDetailState";
 
-export type IncomeExpenditureRequestBody = Omit<PersonalDetailState, "person">;
+export type IncomeExpenditureRequestBody = Omit<PersonalDetailState, "person" | "incomeExpenditureRating">;

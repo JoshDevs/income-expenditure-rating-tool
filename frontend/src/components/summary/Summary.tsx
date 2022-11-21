@@ -1,9 +1,10 @@
+import styles from "./Summary.module.css";
 import Typography from "@mui/material/Typography";
 import { PersonalDetailState } from "../../interfaces/PersonalDetailState";
 
 export const Summary: React.FC<PersonalDetailState> = ({person, income, expenditure, debtPayments}) => {
     return (
-        <div className="details-summary">
+        <div className={styles["details-summary"]}>
             <Typography>Full Name: {person.name.first} {person.name.last}</Typography>
             <Typography>Email: {person.email}</Typography>
             <Typography>Phone: {person.phoneNumber}</Typography>

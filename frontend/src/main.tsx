@@ -12,6 +12,7 @@ import '@fontsource/roboto/500.css';
 import '@fontsource/roboto/700.css';
 import { ErrorPage } from './pages/errorPage/ErrorPage';
 import { Details } from './pages/details/Details';
+import { Results } from './pages/results/Results';
 
 const router = createBrowserRouter([
   {
@@ -22,6 +23,11 @@ const router = createBrowserRouter([
   {
     path: "/details",
     element: <Details />,
+    errorElement: <ErrorPage />,
+  },
+  {
+    path: "/results",
+    element: <Results />,
     errorElement: <ErrorPage />,
   }
 ]);

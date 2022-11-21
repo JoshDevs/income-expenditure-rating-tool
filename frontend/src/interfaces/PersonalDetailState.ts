@@ -1,7 +1,7 @@
 import { DebtPayments } from "./DebtPayments";
 import { Expenditure } from "./Expenditure";
 import { Income } from "./Income";
-import { IncomeExpenditureRating } from "./IncomeExpeditureRating";
+import { IncomeExpenditureRating } from "./IncomeExpenditureRating";
 import { Person } from "./Person";
 
 export interface PersonalDetailState {
@@ -9,5 +9,5 @@ export interface PersonalDetailState {
   income: Income;
   expenditure: Expenditure;
   debtPayments: DebtPayments;
-  incomeExpenditureRating?: IncomeExpenditureRating;
+  incomeExpenditureRating: IncomeExpenditureRating;
 }
