@@ -1,4 +1,4 @@
-# Joshua Osei Ophelos Take Home Test
+# Joshua Osei Income Expenditure Rating Tool
 
 ## Summary
 
